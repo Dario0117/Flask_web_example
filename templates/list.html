@@ -2,4 +2,26 @@
 
 {% block content %}
 <h1>Listar todos</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+            <th>Correo</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for student in students: %}
+            <tr>
+                <td>{{ student.name }}</td>
+                <td>{{ student.lastname }}</td>
+                <td>{{ student.age }}</td>
+                <td>{{ student.email }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
 {% endblock %}
