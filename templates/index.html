@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Web Example</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename = 'css/bootstrap.min.css')}}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename = 'css/simple-sidebar.css')}}" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div id="wrapper" class="toggled">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="/">
+                        Inicio
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Listar todos</a>
+                </li>
+                <li>
+                    <a href="#">Buscar</a>
+                </li>
+                <li>
+                    <a href="#">Agregar</a>
+                </li>
+                <li>
+                    <a href="#">Modificar</a>
+                </li>
+                <li>
+                    <a href="#">Eliminar</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{ url_for('static', filename = 'js/jquery.min.js')}}"></script>
+    <script src="{{ url_for('static', filename = 'js/popper.min.js')}}"></script>
+    <script src="{{ url_for('static', filename = 'js/bootstrap.min.js')}}"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    
+    </script>
+
+</body>
+
+</html>
