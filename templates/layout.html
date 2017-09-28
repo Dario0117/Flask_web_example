@@ -31,19 +31,19 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">Listar todos</a>
+                    <a href="{{ url_for('lst') }}">Listar todos</a>
                 </li>
                 <li>
-                    <a href="#">Buscar</a>
+                    <a href="{{ url_for('search') }}">Buscar</a>
                 </li>
                 <li>
-                    <a href="#">Agregar</a>
+                    <a href="{{ url_for('add') }}">Agregar</a>
                 </li>
                 <li>
-                    <a href="#">Modificar</a>
+                    <a href="{{ url_for('edit') }}">Modificar</a>
                 </li>
                 <li>
-                    <a href="#">Eliminar</a>
+                    <a href="{{ url_for('delete') }}">Eliminar</a>
                 </li>
             </ul>
         </div>
@@ -52,7 +52,8 @@
         <!-- Page Content -->
         <div id="page-content-wrapper">
             <div class="container-fluid">
-                
+                {% block content %}
+                {% endblock %}
             </div>
         </div>
         <!-- /#page-content-wrapper -->
