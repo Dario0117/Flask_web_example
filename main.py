@@ -30,11 +30,9 @@ def delete():
 
 
 if __name__ == '__main__':
-    students.append(
-        Student("Esteban 1", "Barboza 1", 22, "e@mail.com").__dict__,
-        Student("Esteban 2", "Barboza 2", 22, "e@mail.com").__dict__,
-        Student("Esteban 3", "Barboza 3", 22, "e@mail.com").__dict__,
-        Student("Esteban 4", "Barboza 4", 22, "e@mail.com").__dict__,
-        Student("Esteban 5", "Barboza 5", 22, "e@mail.com").__dict__,
-    )
+    students.append(Student("Esteban 1", "Barboza 1", 22, "e@mail.com").__dict__)
+    students.append(Student("Esteban 2", "Barboza 2", 22, "e@mail.com").__dict__)
+    students.append(Student("Esteban 3", "Barboza 3", 22, "e@mail.com").__dict__)
+    students.append(Student("Esteban 4", "Barboza 4", 22, "e@mail.com").__dict__)
+    students.append(Student("Esteban 5", "Barboza 5", 22, "e@mail.com").__dict__)
     app.run(debug= True, port=80)
