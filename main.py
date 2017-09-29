@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from back.Student import Student
 
 app = Flask(__name__)
@@ -15,10 +15,14 @@ def add():
 @app.route('/edit/<int:id>')
 def edit(id):
     student = [x for x in students if x.id == id]
-
     if len(student) == 0: return render_template('list.html', students=students)
-
     return render_template('edit.html', student=student[0])
+
+@app.route('/delete/<int:id>', methods=['GET'])
+def delete(id):
+    student = [x for x in students if x.id == id]
+    students.remove(student[0])
+    return "x"
 
 if __name__ == '__main__':
     students.append(Student("Esteban 1", "Barboza 1", 22, "e@mail.com"))

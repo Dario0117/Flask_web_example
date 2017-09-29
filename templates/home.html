@@ -23,12 +23,26 @@
             <td>{{ student.age }}</td>
             <td>{{ student.email }}</td>
             <td>
-                <button type="button" class="btn btn-warning">E</button>
-                <button type="button" class="btn btn-danger">X</button>
+                <a class="btn btn-warning" href="/edit/{{ student.id }}" role="button">E</a>
+                <button type="button" class="btn btn-danger" onclick="del({{ student.id }})">X</button>
             </td>
         </tr>
         {% endfor %}
     </tbody>
 </table>
 
+{% endblock %}
+
+{% block js %}
+    <script>
+        function del(id){
+            $.ajax({
+                method: "GET",
+                url: "/delete/"+id
+            })
+            .done(function(msg){
+                window.location = "/";
+            });
+        }
+    </script>
 {% endblock %}
