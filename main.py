@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 from back.Student import Student
 
 app = Flask(__name__)
@@ -10,7 +10,7 @@ def index():
 
 @app.route('/add')
 def add():
-    return render_template('add.html', students=students)
+    return render_template('add.html', student=Student("","","",""), add=True)
 
 @app.route('/edit/<int:id>')
 def edit(id):
@@ -29,6 +29,32 @@ def search():
     name = request.args.get('name')
     students_filt = [x for x in students if name in x.name.lower() or name.lower() in x.lastname.lower()]
     return render_template('home.html', students=students_filt, home=True)
+
+@app.route('/save/', methods=['POST'])
+def save():
+    print (request.form)
+    edited = False
+    for student in students:
+        if student.id == int(request.form['std_id']):
+            student.name        = request.form['name']
+            student.lastname    = request.form['lastname']
+            student.age         = request.form['age']
+            student.email       = request.form['email']
+            edited = True
+            break
+    print ("asd")
+    if edited == False:
+        print ("entro 1")
+        students.append(
+            Student(
+                request.form['name'],
+                request.form['lastname'],
+                request.form['age'],
+                request.form['email']
+            )
+        )
+        print ("entro last")
+    return redirect(url_for('index'))
 
 if __name__ == '__main__':
     students.append(Student("steban 1", "Barboza 1", 22, "e@mail.com"))
